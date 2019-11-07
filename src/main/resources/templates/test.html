@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Test Page</title>
+</head>
+<body>
+	<label th:text="${param.success}">No Param</label>
+	<label th:text="${success}">No Param</label>
+	
+	<label th:text="${session.name}">No Param</label> <br />
+	<label th:text="${session}">No Param</label> <br />
+	<label th:text="${#ctx.request}">No Param</label> <br />
+	
+</body>
+</html>

@@ -1,0 +1,14 @@
+server:
+  port: 4014
+spring:
+  thymeleaf:
+    cache: true
+    check-template-location: true
+    mode: HTML5
+    servlet:
+      content-type: text/html; charset=utf-8
+    enabled: true
+    encoding: UTF-8
+    prefix: classpath:/templates/
+    suffix: .html
+    

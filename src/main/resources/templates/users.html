@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Users</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+	<style type="text/css">
+		.navbar-custom {
+			background-color: lightgreen;
+		}
+	</style>
+</head>
+<body>
+	<div class = "container-fluid">
+		<h1 style="text-align: center;">Users</h1>
+		<div th:if="${#lists.size(users) >= 1}">
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>NAME</th>
+						<th>AGE</th>
+						<th>EMAIL</th>
+						<th>ADDRESS</th>
+						<th>LANGUAGES</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user: ${users}">
+						<td th:text="${user.id}">Text...</td>
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.age}"></td>
+						<td th:text="${user.email}"></td>
+						<td th:text="${user.address}"></td>
+						<td th:text="${#strings.listJoin(user.languages, ',')}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
